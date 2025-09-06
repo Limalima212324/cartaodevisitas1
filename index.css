@@ -1,0 +1,74 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center; /*centraliza o cartão na tela*/
+    align-items: center; /*centraliza verticalmente - NOVO */
+    min-height: 100vh; /*altura total da tela - NOVO*/
+    flex-direction: column; /*mantém as divs empilhadas - NOVO*/
+    padding: 50px 0; /*espaço em volta do cartão*/
+    margin: 0; /*remove margem padrão - NOVO */
+}
+
+#cartao{ 
+    /* permanece vazio, nada alterado */
+}
+
+#foto { 
+    text-align: center;/*centralizar a imagem da div*/
+    margin-bottom: 20px;/*espço entre a foto e os textos*/
+    background-color: white; /*fundo branco simulando cartão - NOVO*/
+    padding: 20px; /*espaço interno - NOVO*/
+    border-radius: 15px; /*bordas arredondadas - NOVO*/
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); /*sombra - NOVO*/
+    width: 300px; /*largura fixa do cartão - NOVO*/
+}
+
+#foto img {
+    width: 150px; /*tamanho da imagem*/
+    height: 150px; /*tamanho da imagem*/
+    border-radius: 50%; /*deixa a imagem redonda*/
+    display: block; /*centraliza a imagem - NOVO*/
+    margin: 0 auto 15px auto; /*espaçamento embaixo - NOVO*/
+}
+
+/*CENTRALIZA LINKS E ESPAÇAMENTO*/
+#redes-sociais {
+    margin: 0 10px; /*espaço entre os links*/
+    text-decoration: none; /*tira o sublinhado dos links*/
+    color: #0077b5; /*cor dos links*/
+    font-weight: bold; /*deixa o texto em negrito*/
+    background-color: white; /*fundo branco - NOVO*/
+    padding: 20px; /*espaço interno - NOVO*/
+    border-radius: 15px; /*bordas arredondadas - NOVO*/
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); /*sombra - NOVO*/
+    width: 300px; /*largura fixa igual ao da foto - NOVO*/
+    text-align: center; /*centraliza o conteúdo - NOVO*/
+    margin-top: 10px; /*separação entre divs - NOVO*/
+}
+
+/*ESTILO BOTÃO*/
+#trocar-tema {
+    display: block; /*faz o botão ocupar a linha toda*/
+    margin: 10px auto 0 auto; /*centraliza o botão*/
+    padding: 10px 20px; /*espaço dentro do botão*/
+    border: none; /*tira a borda padrão do botão*/
+    border-radius: 5px; /*deixa as bordas arredondadas*/
+    background-color: #0077b5; /*cor de fundo do botão*/
+    color: white; /*cor do texto do botão*/
+    cursor: pointer; /*muda o cursor ao passar por cima do botão*/
+}
+
+body.tema-escuro {
+    background-color: #222;/*cor de fundo escuro*/
+    color: #f0f0f0; /*cor do texto claro*/
+}
+
+body.tema-escuro #redes-sociais a { /*cor dos links no tema escuro*/
+    color: #aaf;/*cor clara para os links*/
+}
+
+body.tema-escuro #trocar-tema { /*cor do botão no tema escuro*/
+    background-color: #555;/*cor de fundo escura*/
+    color: white;/*cor do texto clara*/
+}

@@ -1,74 +1,132 @@
+/* Variáveis para tema escuro */
+:root {
+    --fundo-claro: #f0f0f0;
+    --card-claro: #ffffff;
+    --texto-claro: #333;
+    --link-cor-clara: #0077b5;
+
+    --fundo-escuro: #1e1e1e;
+    --card-escuro: #2a2a2a;
+    --texto-escuro: #f0f0f0;
+    --link-cor-escura: #54a0ff;
+}
+
+/* ------------------ ESTILO BASE ------------------ */
+
 body {
-    background-color: #f0f0f0;
+    /* Usa as variáveis do tema claro como padrão */
+    background-color: var(--fundo-claro);
+    color: var(--texto-claro);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    /* Centralização usando Flexbox */
     display: flex;
-    justify-content: center; /*centraliza o cartão na tela*/
-    align-items: center; /*centraliza verticalmente - NOVO */
-    min-height: 100vh; /*altura total da tela - NOVO*/
-    flex-direction: column; /*mantém as divs empilhadas - NOVO*/
-    padding: 50px 0; /*espaço em volta do cartão*/
-    margin: 0; /*remove margem padrão - NOVO */
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    
+    flex-direction: column; /* Organiza os cards em coluna */
+    margin: 0; 
+    padding: 20px 0; 
+    transition: background-color 0.5s, color 0.5s; /* Transição suave */
 }
 
-#cartao{ 
-    /* permanece vazio, nada alterado */
+/* Estilo do Cartão (Aplicado ao bloco de texto, foto e links) */
+#info-pessoal, #foto, #redes-sociais { 
+    background-color: var(--card-claro);
+    padding: 20px; 
+    border-radius: 15px; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
+    width: 300px; 
+    margin-bottom: 20px;
 }
 
-#foto { 
-    text-align: center;/*centralizar a imagem da div*/
-    margin-bottom: 20px;/*espço entre a foto e os textos*/
-    background-color: white; /*fundo branco simulando cartão - NOVO*/
-    padding: 20px; /*espaço interno - NOVO*/
-    border-radius: 15px; /*bordas arredondadas - NOVO*/
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2); /*sombra - NOVO*/
-    width: 300px; /*largura fixa do cartão - NOVO*/
+/* ------------------ SELETORES ESPECÍFICOS ------------------ */
+
+/* Estilo para o Bloco de Texto (Corrigido) */
+#info-pessoal h1 {
+    text-align: center;
+    border-bottom: 2px solid var(--link-cor-clara);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Estilo da Foto */
+#foto {
+    text-align: center;
 }
 
 #foto img {
-    width: 150px; /*tamanho da imagem*/
-    height: 150px; /*tamanho da imagem*/
-    border-radius: 50%; /*deixa a imagem redonda*/
-    display: block; /*centraliza a imagem - NOVO*/
-    margin: 0 auto 15px auto; /*espaçamento embaixo - NOVO*/
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover;
+    display: block; 
+    margin: 0 auto;
+    border: 3px solid var(--link-cor-clara);
 }
 
-/*CENTRALIZA LINKS E ESPAÇAMENTO*/
+/* Estilo dos Links e Botão */
 #redes-sociais {
-    margin: 0 10px; /*espaço entre os links*/
-    text-decoration: none; /*tira o sublinhado dos links*/
-    color: #0077b5; /*cor dos links*/
-    font-weight: bold; /*deixa o texto em negrito*/
-    background-color: white; /*fundo branco - NOVO*/
-    padding: 20px; /*espaço interno - NOVO*/
-    border-radius: 15px; /*bordas arredondadas - NOVO*/
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2); /*sombra - NOVO*/
-    width: 300px; /*largura fixa igual ao da foto - NOVO*/
-    text-align: center; /*centraliza o conteúdo - NOVO*/
-    margin-top: 10px; /*separação entre divs - NOVO*/
+    text-align: center;
+    /* Ajustando o display dos links para que o 'text-align: center' funcione */
 }
 
-/*ESTILO BOTÃO*/
-#trocar-tema {
-    display: block; /*faz o botão ocupar a linha toda*/
-    margin: 10px auto 0 auto; /*centraliza o botão*/
-    padding: 10px 20px; /*espaço dentro do botão*/
-    border: none; /*tira a borda padrão do botão*/
-    border-radius: 5px; /*deixa as bordas arredondadas*/
-    background-color: #0077b5; /*cor de fundo do botão*/
-    color: white; /*cor do texto do botão*/
-    cursor: pointer; /*muda o cursor ao passar por cima do botão*/
+#redes-sociais a {
+    text-decoration: none; 
+    color: var(--link-cor-clara); 
+    font-weight: bold; 
+    margin: 0 10px;
+    display: inline-block; /* Permite que fiquem lado a lado */
 }
+
+#redes-sociais a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do Botão Trocar Tema */
+#trocar-tema {
+    display: block; 
+    margin: 20px auto 0 auto; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: var(--link-cor-clara); 
+    color: white; 
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#trocar-tema:hover {
+    background-color: #005a9c;
+}
+
+/* ------------------ TEMA ESCURO (NOVO) ------------------ */
 
 body.tema-escuro {
-    background-color: #222;/*cor de fundo escuro*/
-    color: #f0f0f0; /*cor do texto claro*/
+    background-color: var(--fundo-escuro);
+    color: var(--texto-escuro);
 }
 
-body.tema-escuro #redes-sociais a { /*cor dos links no tema escuro*/
-    color: #aaf;/*cor clara para os links*/
+/* Estilo dos Cards no Tema Escuro */
+body.tema-escuro #info-pessoal, 
+body.tema-escuro #foto, 
+body.tema-escuro #redes-sociais { 
+    background-color: var(--card-escuro);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1); 
 }
 
-body.tema-escuro #trocar-tema { /*cor do botão no tema escuro*/
-    background-color: #555;/*cor de fundo escura*/
-    color: white;/*cor do texto clara*/
+/* Links e Botão no Tema Escuro */
+body.tema-escuro #redes-sociais a { 
+    color: var(--link-cor-escura);
+}
+
+body.tema-escuro #foto img {
+    border: 3px solid var(--link-cor-escura);
+}
+
+body.tema-escuro #trocar-tema { 
+    background-color: #555;
+    color: white;
 }

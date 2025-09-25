@@ -1,8 +1,17 @@
-const botao = document.getElementById('trocar-tema'); // corresponde ao botão
-botao.addEventListener('click', function() { // aqui captura o click
-    // Troca a classe 'tema-escuro' no body
-    document.body.classList.toggle('tema-escuro');
-    /* aqui ele pensa da seguinte forma, olha
-    vai ver se o body tem a classe tema-escuro
-    se tiver blz remove se nao tiver blz adiciona */
+// Obtém o botão e o corpo da página
+const botaoTema = document.getElementById('trocar-tema');
+const body = document.body;
+
+// Adiciona um "ouvinte de evento" ao botão. Quando ele é clicado:
+botaoTema.addEventListener('click', function() {
+    
+    // Alterna a classe 'tema-escuro' no corpo
+    body.classList.toggle('tema-escuro');
+    
+    // Troca o texto do botão
+    if (body.classList.contains('tema-escuro')) {
+        botaoTema.textContent = 'Trocar para Claro';
+    } else {
+        botaoTema.textContent = 'Trocar para Escuro';
+    }
 });

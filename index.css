@@ -1,0 +1,132 @@
+/* Variáveis para tema escuro */
+:root {
+    --fundo-claro: #f0f0f0;
+    --card-claro: #ffffff;
+    --texto-claro: #333;
+    --link-cor-clara: #0077b5;
+
+    --fundo-escuro: #1e1e1e;
+    --card-escuro: #2a2a2a;
+    --texto-escuro: #f0f0f0;
+    --link-cor-escura: #54a0ff;
+}
+
+/* ------------------ ESTILO BASE ------------------ */
+
+body {
+    /* Usa as variáveis do tema claro como padrão */
+    background-color: var(--fundo-claro);
+    color: var(--texto-claro);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    /* Centralização usando Flexbox */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    
+    flex-direction: column; /* Organiza os cards em coluna */
+    margin: 0; 
+    padding: 20px 0; 
+    transition: background-color 0.5s, color 0.5s; /* Transição suave */
+}
+
+/* Estilo do Cartão (Aplicado ao bloco de texto, foto e links) */
+#info-pessoal, #foto, #redes-sociais { 
+    background-color: var(--card-claro);
+    padding: 20px; 
+    border-radius: 15px; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
+    width: 300px; 
+    margin-bottom: 20px;
+}
+
+/* ------------------ SELETORES ESPECÍFICOS ------------------ */
+
+/* Estilo para o Bloco de Texto (Corrigido) */
+#info-pessoal h1 {
+    text-align: center;
+    border-bottom: 2px solid var(--link-cor-clara);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Estilo da Foto */
+#foto {
+    text-align: center;
+}
+
+#foto img {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover;
+    display: block; 
+    margin: 0 auto;
+    border: 3px solid var(--link-cor-clara);
+}
+
+/* Estilo dos Links e Botão */
+#redes-sociais {
+    text-align: center;
+    /* Ajustando o display dos links para que o 'text-align: center' funcione */
+}
+
+#redes-sociais a {
+    text-decoration: none; 
+    color: var(--link-cor-clara); 
+    font-weight: bold; 
+    margin: 0 10px;
+    display: inline-block; /* Permite que fiquem lado a lado */
+}
+
+#redes-sociais a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do Botão Trocar Tema */
+#trocar-tema {
+    display: block; 
+    margin: 20px auto 0 auto; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: var(--link-cor-clara); 
+    color: white; 
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#trocar-tema:hover {
+    background-color: #005a9c;
+}
+
+/* ------------------ TEMA ESCURO (NOVO) ------------------ */
+
+body.tema-escuro {
+    background-color: var(--fundo-escuro);
+    color: var(--texto-escuro);
+}
+
+/* Estilo dos Cards no Tema Escuro */
+body.tema-escuro #info-pessoal, 
+body.tema-escuro #foto, 
+body.tema-escuro #redes-sociais { 
+    background-color: var(--card-escuro);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1); 
+}
+
+/* Links e Botão no Tema Escuro */
+body.tema-escuro #redes-sociais a { 
+    color: var(--link-cor-escura);
+}
+
+body.tema-escuro #foto img {
+    border: 3px solid var(--link-cor-escura);
+}
+
+body.tema-escuro #trocar-tema { 
+    background-color: #555;
+    color: white;
+}
